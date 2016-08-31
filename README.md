@@ -12,6 +12,8 @@ TestRail-Automation aims to be agnostic of any test implementation, although you
 
 ## How to use?
 First of all, you need to define in your TestRail a `Suite of tests` and set a `Test Run` with test cases you want perform.
+Then, you need to edit ``helpers/auth.py`` and fill the variables `TR_USER`, `TR_PWD` and `TR_URL`.
+
 * Get help? `python main.py -h`
 * Example:
   `python main.py --project "OSVR" --suite "TestRailAutomation" --run "Python_API" --case "Check Python Integration" --status "PASSED" --comment "It worked as expected."`
