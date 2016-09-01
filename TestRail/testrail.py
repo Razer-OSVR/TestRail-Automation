@@ -10,7 +10,13 @@
 # Copyright Gurock Software GmbH. See license.md for details.
 #
 
-import urllib2, json, base64
+try:
+    import urllib2
+except Exception:
+    print("[Error] Please, you need to install urllib2.")
+
+import json, base64
+
 
 class APIClient:
 	def __init__(self, base_url):
