@@ -38,6 +38,10 @@ if __name__ == '__main__':
     case = helpers.cases.TestRail()
     args = menu()    
 
+    #  If there is no argv, call usage().
+    if args.project is None:
+        print "usage: %s" % (usage())
+
     #  We check status first, if it doesn't match we don't call the API 
     #  and exit(1).
     status = status(args.status)
