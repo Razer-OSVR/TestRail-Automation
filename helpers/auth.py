@@ -31,7 +31,7 @@ def trclient():
     used by other methods.
     '''
 
-    TR_USER, TR_PWD, TR_USER = readConfigFile()
+    TR_USER, TR_PWD, TR_URL = readConfigFile()
 
     client = APIClient(TR_URL)
     client.user = TR_USER
