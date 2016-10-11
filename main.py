@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
+import sys
 import argparse
 import helpers.auth
 import helpers.cases
@@ -38,8 +39,8 @@ if __name__ == '__main__':
     case = helpers.cases.TestRail()
     args = menu()    
 
-    #  If there is no argv, call usage().
-    if args.project is None:
+    #  If there is less than 10 args, call usage().
+    if len(sys.argv) < 10:
         print "usage: %s" % (usage())
 
     #  We check status first, if it doesn't match we don't call the API 
