@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 #
 
+import sys
+
 __author__ = "OSVR and contributors."
 __copyright__ = "Copyright 2016, %s" % (__author__)
 __credits__ = ["Marcelo Araujo"]
@@ -35,4 +37,4 @@ def status(str_status):
             print("[Error] Status not recognized.")
             exit(1)
     else:
-        exit(1)
+        sys.exit(1)
