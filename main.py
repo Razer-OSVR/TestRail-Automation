@@ -55,4 +55,6 @@ if __name__ == '__main__':
     case_id = case.get_case_id(args.case, section_id, suite_id, project_id)
 
     #  Update the test case.
-    case.set_test_case_result(run_id, case_id, status, comment)
+    update_case = case.set_test_case_result(run_id, case_id, status, comment)
+    if len(update_case) > 0:
+        print("[Case ID: %s] updated." % (case_id))
