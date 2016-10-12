@@ -35,6 +35,6 @@ def status(str_status):
             return FAIL
         else:
             print("[Error] Status not recognized.")
-            exit(1)
+            sys.exit(1)
     else:
         sys.exit(1)
