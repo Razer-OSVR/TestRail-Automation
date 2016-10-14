@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
+import os
+import sys
 import ConfigParser
 from TestRail.testrail import *
 
@@ -10,12 +12,20 @@ __credits__ = ["Marcelo Araujo"]
 __license__ = "Apache 2.0"
 
 # Config File.
-config_file_path = "defaults.cfg"
+config_file = "defaults.cfg"
 
 def readConfigFile():
     TR_URL = TR_USER = TR_PWD = None
     section = 'TestRail'
 
+    abspath = sys.path[0]
+    if os.name == 'posix':
+        dirpath = abspath + '/'
+    else:
+        main = abspath.split('\\')[-1]
+        dirpath = abspath[:-len(main)]
+
+    config_file_path = dirpath + config_file
     config = ConfigParser.ConfigParser()
     config.readfp(open(config_file_path))
 
