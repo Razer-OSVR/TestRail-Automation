@@ -1,7 +1,10 @@
 import sys
 from cx_Freeze import setup, Executable
 
-build_deps = {"includes": ["argparse", "helpers", "TestRail", "os", "dummy_threading", "urllib"]}
+include_files = ['defaults.cfg']
+build_deps = {"includes": ["argparse", "helpers", "TestRail", "os",
+                           "dummy_threading", "urllib"],
+              "include_files": include_files}
 
 setup(
 	name = "OSVR TestRail automation",
